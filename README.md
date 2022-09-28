@@ -13,7 +13,7 @@ The `lessons/` folder contains a unique folder for each lesson including a READM
 
 The final state of the application can also be found in the `final` branch.
 
-#Technologies</a>
+# Technologies
  - <a href="https://vitejs.dev/">Vite</a>
  - <a href="https://reactrouter.com/en/main">React Router</a>
  - <a href="https://www.typescriptlang.org/">TypeScript</a>
