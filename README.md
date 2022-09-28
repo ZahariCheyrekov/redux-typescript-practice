@@ -1,3 +1,8 @@
+# About
+This project was originally created by <a href="https://github.com/xjamundx">Jamund Ferguson</a>. 
+
+You can find the project repository <a href="https://github.com/xjamundx/redux-shopping-cart">here</a>. 
+
 # Redux Shopping Cart
 Example shopping cart application for learning redux and redux toolkit. Goes along with the egghead course <a href="https://app.egghead.io/playlists/modern-redux-with-redux-toolkit-rtk-and-typescript-64f243c8">Modern Redux with Redux Toolkit (RTK) and TypeScript</a>.
 
