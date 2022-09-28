@@ -20,11 +20,14 @@ const cartSlice = createSlice({
             } else {
                 state.items[id] = 1;
             }
+        },
+        removeFromCart(state, action: PayloadAction<string>) {
+            delete state.items[action.payload];
         }
     }
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
 export const getMemoizedNumItems = createSelector(
@@ -49,7 +52,7 @@ export const getTotalPrice = createSelector(
         for (const id in items) {
             total += products[id].price * items[id];
         }
-        
+
         return total.toFixed(2);
     }
 );
