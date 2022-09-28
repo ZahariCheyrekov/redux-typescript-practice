@@ -45,7 +45,16 @@ const cartSlice = createSlice({
         builder.addCase(checkoutCart.pending, (state) => {
             state.checkoutState = "LOADING";
         });
-        builder.addCase(checkoutCart.fulfilled, (state) => {
+        builder.addCase(checkoutCart.fulfilled, (state, action: PayloadAction<{ success: boolean }>) => {
+            const { success } = action.payload;
+
+            if (success) {
+                state.checkoutState = "READY";
+                state.items = {};
+            } else {
+                state.checkoutState = "ERROR";
+            }
+
             state.checkoutState = "READY";
         });
         builder.addCase(checkoutCart.rejected, (state, action) => {
