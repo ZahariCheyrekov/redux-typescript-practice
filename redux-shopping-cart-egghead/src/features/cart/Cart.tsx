@@ -10,6 +10,7 @@ export function Cart() {
   const items = useAppSelector(state => state.cart.items);
   const totalPrice = useAppSelector(getTotalPrice);
   const checkoutState = useAppSelector(state => state.cart.checkoutState);
+  const errorMesage = useAppSelector(state => state.cart.errorMessage);
 
   const onQuantityChange = (e: React.FocusEvent<HTMLInputElement>, id: string) => {
     const quantity = Number(e.target.value) || 0;
@@ -73,6 +74,12 @@ export function Cart() {
         </tfoot>
       </table>
       <form onSubmit={onCheckout}>
+        {checkoutState === "ERROR" && errorMesage ? (
+          <p className={styles.errorBox}>
+            {errorMesage}
+          </p>
+        ) : null
+        }
         <button className={styles.button} type="submit">
           Checkout
         </button>
